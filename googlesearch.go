@@ -28,6 +28,8 @@ func Search(query string) (results []Result) {
 	handle(e)
 	jsonRes := string(body)
 
+	// that json package just screwed with my zen for too long
+	// regexp it went.
 	re := regexp.MustCompile("\"url\":\"(.+?)\"")
 	links := re.FindAllStringSubmatch(jsonRes, -1)
 	re = regexp.MustCompile("\"title\":\"(.+?)\"")
