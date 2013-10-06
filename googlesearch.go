@@ -9,7 +9,7 @@ import (
 )
 
 type Result struct {
-	title, url string
+	Title, Url string
 }
 
 // Search for query string... returns the max... of 8 results
@@ -36,7 +36,7 @@ func Search(query string) (results []Result) {
 	titles := re.FindAllStringSubmatch(jsonRes, -1)
 
 	for i, _ := range titles {
-		res := Result{title:titles[i][1], url:links[i][1]}
+		res := Result{Title:titles[i][1], Url:links[i][1]}
 		results = append(results, res)
 	}
 
