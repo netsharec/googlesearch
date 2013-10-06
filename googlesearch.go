@@ -32,7 +32,7 @@ func Search(query string) (results []Result) {
 	// regexp it went.
 	re := regexp.MustCompile("\"url\":\"(.+?)\"")
 	links := re.FindAllStringSubmatch(jsonRes, -1)
-	re = regexp.MustCompile("\"title\":\"(.+?)\"")
+	re = regexp.MustCompile("\"titleNoFormatting\":\"(.+?)\"")
 	titles := re.FindAllStringSubmatch(jsonRes, -1)
 
 	for i, _ := range titles {
